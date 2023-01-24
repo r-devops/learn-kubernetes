@@ -1,0 +1,149 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: frontend
+  labels:
+    component: frontend
+spec:
+  containers:
+    - name: frontend
+      image: frontend
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: frontend
+spec:
+  selector:
+    component: frontend
+  ports:
+    - protocol: TCP
+      targetPort: 80
+      port: 80
+  type: LoadBalancer
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: catalogue
+  labels:
+    component: catalogue
+spec:
+  containers:
+    - name: catalogue
+      image: catalogue
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: catalogue
+spec:
+  selector:
+    component: catalogue
+  ports:
+    - protocol: TCP
+      targetPort: 8080
+      port: 80
+  type: ClusterIP
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: cart
+  labels:
+    component: cart
+spec:
+  containers:
+    - name: cart
+      image: cart
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: cart
+spec:
+  selector:
+    component: cart
+  ports:
+    - protocol: TCP
+      targetPort: 8080
+      port: 80
+  type: ClusterIP
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: user
+  labels:
+    component: user
+spec:
+  containers:
+    - name: user
+      image: user
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: user
+spec:
+  selector:
+    component: user
+  ports:
+    - protocol: TCP
+      targetPort: 8080
+      port: 80
+  type: ClusterIP
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: payment
+  labels:
+    component: payment
+spec:
+  containers:
+    - name: payment
+      image: payment
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: payment
+spec:
+  selector:
+    component: payment
+  ports:
+    - protocol: TCP
+      targetPort: 8080
+      port: 80
+  type: ClusterIP
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: shipping
+  labels:
+    component: shipping
+spec:
+  containers:
+    - name: shipping
+      image: shipping
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: shipping
+spec:
+  selector:
+    component: shipping
+  ports:
+    - protocol: TCP
+      targetPort: 8080
+      port: 80
+  type: ClusterIP
