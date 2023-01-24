@@ -32,7 +32,7 @@ metadata:
 spec:
   containers:
     - name: catalogue
-      image: catalogue
+      image: 739561048503.dkr.ecr.us-east-1.amazonaws.com/catalogue:2.0.0
 
 ---
 apiVersion: v1
@@ -57,7 +57,7 @@ metadata:
 spec:
   containers:
     - name: cart
-      image: cart
+      image: 739561048503.dkr.ecr.us-east-1.amazonaws.com/cart:2.0.0
 
 ---
 apiVersion: v1
@@ -82,7 +82,7 @@ metadata:
 spec:
   containers:
     - name: user
-      image: user
+      image: 739561048503.dkr.ecr.us-east-1.amazonaws.com/user:2.0.0
 
 ---
 apiVersion: v1
@@ -107,7 +107,7 @@ metadata:
 spec:
   containers:
     - name: payment
-      image: payment
+      image: 739561048503.dkr.ecr.us-east-1.amazonaws.com/payment:2.0.0
 
 ---
 apiVersion: v1
@@ -132,7 +132,7 @@ metadata:
 spec:
   containers:
     - name: shipping
-      image: shipping
+      image: 739561048503.dkr.ecr.us-east-1.amazonaws.com/shipping:2.0.0
 
 ---
 apiVersion: v1
